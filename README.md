@@ -64,12 +64,18 @@ This project requires **two terminals** to run both services simultaneously.
     source venv/bin/activate  # On Windows: venv\Scripts\activate
     ```
 
-3.  **Install dependencies:**
+3.  **Create and save a txt file named "requirements.txt " with contents:**
+    ```txt
+    flask
+    qiskit
+    qiskit-aer
+    ```
+5.  **Install dependencies:**
     ```bash
-    pip install -r requirements.txt
+    pip install -r requirements.txt 
     ```
 
-4.  **Run the Flask app:**
+6.  **Run the Flask app:**
     ```bash
     python3 qrng_service.py
     ```
