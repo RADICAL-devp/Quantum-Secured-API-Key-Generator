@@ -7,6 +7,7 @@ def generate_random_bits(num_bits):
     """
     Generates real quantum random bits from ANU Quantum RNG API.
     """
+    # https://qrng.anu.edu.au/contact/api-documentation/
     url = f"https://qrng.anu.edu.au/API/jsonI.php?length={num_bits}&type=uint8"
     response = requests.get(url).json()
 
