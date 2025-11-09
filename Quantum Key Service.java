@@ -24,7 +24,6 @@ public class QuantumKeyService {
         QrngResponse response;
 
         try {
-            // Explicitly request 256 random bits
             response = restTemplate.getForObject(qrngServiceUrl + "?bits=256", QrngResponse.class);
         } catch (RestClientException e) {
             throw new RuntimeException("Failed to connect to QRNG Python service: " + e.getMessage(), e);
@@ -36,10 +35,8 @@ public class QuantumKeyService {
 
         String bits = response.getRandomBits();
 
-        // Convert the binary string to hex
         String apiKey = new BigInteger(bits, 2).toString(16);
 
-        // Ensure hex string matches expected length (256 bits / 4 = 64 hex chars)
         int expectedHexLength = bits.length() / 4;
         apiKey = String.format("%" + expectedHexLength + "s", apiKey).replace(' ', '0');
 
