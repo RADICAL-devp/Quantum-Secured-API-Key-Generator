@@ -1,0 +1,6 @@
+# Set the port for the Java service
+server.port=8080
+
+# Define the URL for the Python QRNG service
+# We request 256 bits, which will be converted into a 64-character hex key.
+qrng.service.url=http://localhost:5000/qrng?bits=256
