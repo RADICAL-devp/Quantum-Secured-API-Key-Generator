@@ -11,11 +11,7 @@ public class QuantumKeyApplication {
     public static void main(String[] args) {
         SpringApplication.run(QuantumKeyApplication.class, args);
     }
-
-    /**
-     * Creates a RestTemplate bean for making HTTP requests to external services.
-     * Spring manages this bean and allows it to be injected wherever needed.
-     */
+    
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
