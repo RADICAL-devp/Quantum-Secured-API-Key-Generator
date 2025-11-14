@@ -2,10 +2,6 @@ package com.example.quantumkey.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-/**
- * Maps the JSON response from the QRNG Python service:
- * {"random_bits": "01101..."}
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QrngResponse {
 
